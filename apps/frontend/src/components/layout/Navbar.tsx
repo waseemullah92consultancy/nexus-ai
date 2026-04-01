@@ -80,7 +80,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar }) => {
               variant="h6"
               fontWeight={700}
               sx={{
-                background: 'linear-gradient(135deg, #6366f1 0%, #ec4899 100%)',
+                background: theme.palette.mode === 'dark'
+                  ? 'linear-gradient(135deg, #f59e0b 0%, #2dd4bf 100%)'
+                  : 'linear-gradient(135deg, #b45309 0%, #0f766e 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
@@ -112,15 +114,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar }) => {
         </Box>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <IconButton>
-            <Search />
+          <IconButton >
+            <Search sx={{  color: 'primary.main'}}/>
           </IconButton>
 
           <IconButton>
-            <NotificationsOutlined />
+            <NotificationsOutlined sx={{  color: 'primary.main'}}/>
           </IconButton>
 
-          <IconButton onClick={toggleTheme}>
+          <IconButton onClick={toggleTheme} sx={{  color: 'primary.main'}}>
             {mode === 'dark' ? <LightMode /> : <DarkMode />}
           </IconButton>
 

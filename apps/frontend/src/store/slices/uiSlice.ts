@@ -3,7 +3,7 @@ import { UIState } from '@/types';
 
 const initialState: UIState = {
   sidebarOpen: true,
-  rightPanelOpen: false,
+  rightPanelOpen: true,
   onboardingComplete: false,
   theme: 'dark',
 };

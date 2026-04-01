@@ -5,50 +5,50 @@ import { createTheme, ThemeOptions } from '@mui/material/styles';
 const getDesignTokens = (mode: 'light' | 'dark'): ThemeOptions => {
   const lightPalette = {
     primary: {
-      main: '#6366f1',
-      light: '#818cf8',
-      dark: '#4f46e5',
+      main: '#b45309',
+      light: '#d97706',
+      dark: '#92400e',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#ec4899',
-      light: '#f472b6',
-      dark: '#db2777',
-      contrastText: '#ffffff',
+      main: '#0f766e',
+      light: '#0d9488',
+      dark: '#115e59',
+      contrastText: '#f8fafc',
     },
     background: {
-      default: '#F8F7F4',
-      paper: '#ffffff',
+      default: '#f5f5f4',
+      paper: '#fffcf7',
     },
     text: {
-      primary: '#1f2937',
-      secondary: '#6b7280',
+      primary: '#1c1917',
+      secondary: '#57534e',
     },
-    divider: '#e5e7eb',
+    divider: '#d6d3d1',
   };
 
   const darkPalette = {
     primary: {
-      main: '#818cf8',
-      light: '#a5b4fc',
-      dark: '#6366f1',
-      contrastText: '#0f172a',
+      main: '#f59e0b',
+      light: '#fbbf24',
+      dark: '#d97706',
+      contrastText: '#1c1917',
     },
     secondary: {
-      main: '#f472b6',
-      light: '#f9a8d4',
-      dark: '#ec4899',
-      contrastText: '#0f172a',
+      main: '#2dd4bf',
+      light: '#5eead4',
+      dark: '#14b8a6',
+      contrastText: '#042f2e',
     },
     background: {
-      default: '#0f172a',
-      paper: '#1e293b',
+      default: '#0f0f10',
+      paper: '#171718',
     },
     text: {
-      primary: '#f1f5f9',
-      secondary: '#94a3b8',
+      primary: '#f5f5f4',
+      secondary: '#a8a29e',
     },
-    divider: '#334155',
+    divider: '#292524',
   };
 
   return {
@@ -93,12 +93,12 @@ const getDesignTokens = (mode: 'light' | 'dark'): ThemeOptions => {
             borderRadius: 12,
             borderWidth: 1,
             borderStyle: 'solid',
-            borderColor: mode === 'light' ? '#e5e7eb' : '#334155',
+            borderColor: mode === 'light' ? '#d6d3d1' : '#292524',
             transition: 'box-shadow 0.2s ease-in-out',
             '&:hover': {
               boxShadow: mode === 'light'
-                ? '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
-                : '0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.25)',
+                ? '0 14px 30px -16px rgba(28, 25, 23, 0.45)'
+                : '0 18px 32px -18px rgba(0, 0, 0, 0.75)',
             },
           },
         },

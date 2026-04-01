@@ -21,6 +21,7 @@ export class UsersService {
 
   constructor() {
     this.loadUsers();
+    this.ensureDefaultDemoUser();
   }
 
   private loadUsers(): void {
@@ -34,6 +35,25 @@ export class UsersService {
 
   private saveUsers(): void {
     fs.writeFileSync(USERS_FILE, JSON.stringify(this.users, null, 2));
+  }
+
+  private ensureDefaultDemoUser(): void {
+    const demoEmail = 'demo@nexusai.com';
+    const demoExists = this.users.some((user) => user.email === demoEmail);
+    if (demoExists) {
+      return;
+    }
+
+    const now = new Date().toISOString();
+    this.users.push({
+      id: uuidv4(),
+      email: demoEmail,
+      password: bcrypt.hashSync('demo1234', 12),
+      name: 'Demo User',
+      createdAt: now,
+      updatedAt: now,
+    });
+    this.saveUsers();
   }
 
   async findByEmail(email: string): Promise<User | null> {

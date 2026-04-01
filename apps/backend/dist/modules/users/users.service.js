@@ -10,6 +10,7 @@ class UsersService {
     constructor() {
         this.users = [];
         this.loadUsers();
+        this.ensureDefaultDemoUser();
     }
     loadUsers() {
         try {
@@ -22,6 +23,23 @@ class UsersService {
     }
     saveUsers() {
         fs.writeFileSync(USERS_FILE, JSON.stringify(this.users, null, 2));
+    }
+    ensureDefaultDemoUser() {
+        const demoEmail = 'demo@nexusai.com';
+        const demoExists = this.users.some((user) => user.email === demoEmail);
+        if (demoExists) {
+            return;
+        }
+        const now = new Date().toISOString();
+        this.users.push({
+            id: (0, uuid_1.v4)(),
+            email: demoEmail,
+            password: bcrypt.hashSync('demo1234', 12),
+            name: 'Demo User',
+            createdAt: now,
+            updatedAt: now,
+        });
+        this.saveUsers();
     }
     async findByEmail(email) {
         return this.users.find((user) => user.email === email) || null;

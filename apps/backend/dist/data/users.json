@@ -1,11 +1,10 @@
 [
   {
-    "id": "96d4c158-4de4-4278-9bb8-69e6f1b26b13",
+    "id": "2dee90ee-83f6-4daa-ad0b-e7c53317390e",
     "email": "demo@nexusai.com",
-    "password": "$2b$12$6JLFOLI1GqbPVBYIBXoY0OCNvNwFA6wsbQ9UHc2.TWRvuGVRIMEji",
+    "password": "$2b$12$ZSY1j0q9HVi9lw.WdZRy3.PPIUSp96FWsyNWHeurPADuQqlmFxNku",
     "name": "Demo User",
-    "createdAt": "2026-04-01T09:50:29.992Z",
-    "updatedAt": "2026-04-01T09:52:54.060Z",
-    "refreshToken": "$2b$12$KqIS34Yoac9uaQEHwIVLc.fASaUECpvbVCyFpDS7Iw0u/wGGmMWeu"
+    "createdAt": "2026-04-01T11:48:09.514Z",
+    "updatedAt": "2026-04-01T11:48:09.514Z"
   }
 ]

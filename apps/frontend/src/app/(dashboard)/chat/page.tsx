@@ -5,21 +5,31 @@ import {
   Box,
   Typography,
   TextField,
-  IconButton,
   Paper,
-  Avatar,
-  Chip,
   useTheme,
-  Fade,
+  Grid,
+  Button,
+  Stack,
+  Divider,
+  Chip,
+  IconButton,
 } from '@mui/material';
-import { Send, AutoAwesome, SmartToy, Person } from '@mui/icons-material';
-import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Send,
+  AutoAwesome,
+  SmartToy,
+  MicNone,
+  GraphicEq,
+  VideocamOutlined,
+  AttachFile,
+  ImageOutlined,
+  Add,
+} from '@mui/icons-material';
+import { motion } from 'framer-motion';
 import { useAppSelector, useAppDispatch } from '@/hooks';
-import { addMessage, setActiveModel, clearMessages } from '@/store/slices/chatSlice';
+import { addMessage, setActiveModel } from '@/store/slices/chatSlice';
 import { useGetModelsQuery } from '@/store/api';
 import { Message } from '@/types';
-
-const ONBOARDING_KEY = 'nexusai-onboarding-complete';
 
 export default function ChatPage() {
   const theme = useTheme();
@@ -28,14 +38,6 @@ export default function ChatPage() {
   const { messages, activeModel, isLoading } = useAppSelector((state) => state.chat);
   const { data: models } = useGetModelsQuery();
   const [input, setInput] = useState('');
-  const [showOnboarding, setShowOnboarding] = useState(false);
-
-  useEffect(() => {
-    const completed = localStorage.getItem(ONBOARDING_KEY);
-    if (!completed) {
-      setShowOnboarding(true);
-    }
-  }, []);
 
   useEffect(() => {
     if (models && models.length > 0 && !activeModel) {
@@ -80,12 +82,26 @@ export default function ChatPage() {
     }
   };
 
-  const completeOnboarding = () => {
-    localStorage.setItem(ONBOARDING_KEY, 'true');
-    setShowOnboarding(false);
-  };
-
   const selectedModel = models?.find((m) => m.id === activeModel);
+  const userOptions = ['Just me', 'My team', 'My company', 'My customers', 'Students', 'Anyone / public'];
+  const promptChips = [
+    'Monitor the situation',
+    'Create a prototype',
+    'Build a business plan',
+    'Create content',
+    'Analyze & research',
+    'Learn something',
+  ];
+  const quickIdeasLeft = [
+    'Help me find the best AI model for my project',
+    'Generate realistic images for my marketing campaign',
+    'Create AI agents for workflow automation',
+  ];
+  const quickIdeasRight = [
+    'I want to build an AI chatbot for my website',
+    'Analyze documents and extract key information',
+    'Add voice and speech recognition to my app',
+  ];
 
   return (
     <Box
@@ -96,164 +112,168 @@ export default function ChatPage() {
         backgroundColor: theme.palette.background.default,
       }}
     >
-      {/* Onboarding Modal */}
-      <AnimatePresence>
-        {showOnboarding && (
-          <Fade in={showOnboarding}>
-            <Box
-              sx={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                zIndex: 1000,
-              }}
-            >
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-              >
-                <Paper sx={{ p: 4, maxWidth: 500, textAlign: 'center' }}>
-                  <AutoAwesome sx={{ fontSize: 48, color: 'primary.main', mb: 2 }} />
-                  <Typography variant="h5" fontWeight={700} gutterBottom>
-                    Welcome to NexusAI
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-                    Start exploring AI models by selecting one from the sidebar and sending your first message.
-                  </Typography>
-                  <Chip
-                    label="Start Chatting"
-                    color="primary"
-                    onClick={completeOnboarding}
-                    sx={{ cursor: 'pointer' }}
-                  />
-                </Paper>
-              </motion.div>
-            </Box>
-          </Fade>
-        )}
-      </AnimatePresence>
-
-      {/* Chat Header */}
       <Box
         sx={{
-          p: 2,
+          px: 3,
+          py: 1.2,
           borderBottom: `1px solid ${theme.palette.divider}`,
           backgroundColor: theme.palette.background.paper,
         }}
       >
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <SmartToy color="primary" />
           <Box>
-            <Typography variant="h6" fontWeight={600}>
-              {selectedModel?.name || 'Select a Model'}
+            <Typography variant="body2" fontWeight={600}>
+              {selectedModel?.name || 'Create an image for me'}
             </Typography>
             <Typography variant="caption" color="text.secondary">
-              {selectedModel?.description.slice(0, 50)}...
+              Discovery chat flow
             </Typography>
           </Box>
         </Box>
       </Box>
 
-      {/* Messages */}
-      <Box sx={{ flex: 1, overflow: 'auto', p: 2 }}>
+      <Box sx={{ flex: 1, overflow: 'auto', p: 2.5 }}>
         {messages.length === 0 ? (
-          <Box
-            sx={{
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <AutoAwesome sx={{ fontSize: 64, color: 'primary.main', mb: 2 }} />
-            <Typography variant="h6" color="text.secondary">
-              Start a conversation
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Type a message below to begin
-            </Typography>
+          <Box sx={{ maxWidth: 780, mx: 'auto' }}>
+            <Paper sx={{ p: 2, mb: 1.5, borderRadius: 3 }}>
+              <Typography variant="body2">
+                Great choice! <b>Create an image for me</b> — I can already think of some excellent models for that.
+              </Typography>
+              <Typography variant="body2" sx={{ mt: 1.5 }}>
+                Now, quick question:
+              </Typography>
+            </Paper>
+
+            <Paper sx={{ p: 2, borderRadius: 3 }}>
+              <Typography variant="caption" color="primary.main" fontWeight={700}>
+                ✦ WHO IT&apos;S FOR
+              </Typography>
+              <Typography variant="h6" fontWeight={700} sx={{ mt: 0.5 }}>
+                Who will be using this AI?
+              </Typography>
+              <Grid container spacing={1.2} sx={{ mt: 0.5 }}>
+                {userOptions.map((item) => (
+                  <Grid item xs={12} sm={6} md={4} key={item}>
+                    <Button
+                      fullWidth
+                      variant="outlined"
+                      sx={{
+                        justifyContent: 'flex-start',
+                        borderRadius: 2,
+                        py: 1.2,
+                        textTransform: 'none',
+                        fontWeight: 600,
+                        fontSize: 12,
+                      }}
+                    >
+                      {item}
+                    </Button>
+                  </Grid>
+                ))}
+              </Grid>
+            </Paper>
           </Box>
         ) : (
-          <AnimatePresence>
-            {messages.map((message) => (
-              <motion.div
-                key={message.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Box
-                  sx={{
-                    display: 'flex',
-                    gap: 2,
-                    mb: 2,
-                    flexDirection: message.role === 'user' ? 'row-reverse' : 'row',
-                  }}
-                >
-                  <Avatar
-                    sx={{
-                      bgcolor: message.role === 'user' ? 'secondary.main' : 'primary.main',
-                    }}
-                  >
-                    {message.role === 'user' ? <Person /> : <SmartToy />}
-                  </Avatar>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      maxWidth: '70%',
-                      backgroundColor:
-                        message.role === 'user'
-                          ? theme.palette.primary.main + '20'
-                          : theme.palette.background.paper,
-                    }}
-                  >
-                    <Typography variant="body1">{message.content}</Typography>
-                  </Paper>
-                </Box>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+          messages.map((message) => (
+            <motion.div
+              key={message.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Paper sx={{ p: 2, mb: 1.2, maxWidth: 840, mx: 'auto', borderRadius: 3 }}>
+                <Typography variant="body2">{message.content}</Typography>
+              </Paper>
+            </motion.div>
+          ))
         )}
         <div ref={messagesEndRef} />
       </Box>
 
-      {/* Input */}
       <Box
         sx={{
-          p: 2,
+          px: 2.5,
+          pb: 2,
           borderTop: `1px solid ${theme.palette.divider}`,
           backgroundColor: theme.palette.background.paper,
         }}
       >
-        <Box sx={{ display: 'flex', gap: 1 }}>
-          <TextField
-            fullWidth
-            placeholder="Type a message..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyPress={handleKeyPress}
-            multiline
-            maxRows={4}
-            disabled={isLoading}
-          />
-          <IconButton
-            color="primary"
-            onClick={handleSend}
-            disabled={!input.trim() || isLoading}
-            sx={{ alignSelf: 'flex-end' }}
-          >
-            <Send />
-          </IconButton>
-        </Box>
+        <Paper
+          sx={{
+            maxWidth: 980,
+            mx: 'auto',
+            borderRadius: 1.5,
+            border: `1px solid ${theme.palette.divider}`,
+            overflow: 'hidden',
+          }}
+        >
+          <Box sx={{ p: 1.1 }}>
+            <TextField
+              fullWidth
+              variant="standard"
+              placeholder="Describe your project, ask a question, or just say hi — I’m here to help."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyPress={handleKeyPress}
+              disabled={isLoading}
+              InputProps={{ disableUnderline: true }}
+            />
+          </Box>
+          <Divider />
+          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ px: 1.2, py: 0.7 }}>
+            <Stack direction="row" spacing={1} alignItems="center">
+              <MicNone sx={{ fontSize: 16, color: 'text.secondary' }} />
+              <GraphicEq sx={{ fontSize: 16, color: 'text.secondary' }} />
+              <VideocamOutlined sx={{ fontSize: 16, color: 'text.secondary' }} />
+              <AttachFile sx={{ fontSize: 16, color: 'text.secondary' }} />
+              <ImageOutlined sx={{ fontSize: 16, color: 'text.secondary' }} />
+              <Add sx={{ fontSize: 16, color: 'text.secondary' }} />
+            </Stack>
+            <Typography variant="caption" color="text.secondary">
+              GPT-5.4 •
+            </Typography>
+            <Box sx={{ ml: 'auto', mr: -0.4 }}>
+              <IconButton
+                onClick={handleSend}
+                disabled={!input.trim() || isLoading}
+                sx={{
+                  bgcolor: 'primary.main',
+                  color: 'primary.contrastText',
+                  width: 30,
+                  height: 30,
+                  '&:hover': { bgcolor: 'primary.dark' },
+                }}
+              >
+                <Send sx={{ fontSize: 15 }} />
+              </IconButton>
+            </Box>
+          </Stack>
+
+          <Stack direction="row" spacing={0.7} flexWrap="wrap" sx={{ px: 0.6, py: 0.9 }}>
+            <Chip size="small" icon={<AutoAwesome />} label="88 Use cases" sx={{ bgcolor: '#171717', color: '#fff' }} />
+            {promptChips.map((chip) => (
+              <Chip key={chip} size="small" label={chip} variant="outlined" />
+            ))}
+          </Stack>
+
+          <Grid container sx={{ px: 1.2, pb: 1.1 }}>
+            <Grid item xs={12} md={6}>
+              {quickIdeasLeft.map((idea) => (
+                <Typography key={idea} variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.35 }}>
+                  • {idea}
+                </Typography>
+              ))}
+            </Grid>
+            <Grid item xs={12} md={6}>
+              {quickIdeasRight.map((idea) => (
+                <Typography key={idea} variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.35 }}>
+                  • {idea}
+                </Typography>
+              ))}
+            </Grid>
+          </Grid>
+        </Paper>
       </Box>
     </Box>
   );

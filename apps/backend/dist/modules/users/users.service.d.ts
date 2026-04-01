@@ -13,6 +13,7 @@ export declare class UsersService {
     constructor();
     private loadUsers;
     private saveUsers;
+    private ensureDefaultDemoUser;
     findByEmail(email: string): Promise<User | null>;
     findById(id: string): Promise<User | null>;
     create(email: string, password: string, name: string): Promise<Omit<User, 'password' | 'refreshToken'>>;

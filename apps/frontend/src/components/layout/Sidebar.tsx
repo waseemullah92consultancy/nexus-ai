@@ -1,8 +1,20 @@
 'use client';
 
 import React from 'react';
-import { Box, Typography, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Divider, useTheme } from '@mui/material';
-import { SmartToy, AutoAwesome, Psychology, Code, Science, TrendingUp } from '@mui/icons-material';
+import {
+  Box,
+  Typography,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Divider,
+  useTheme,
+  TextField,
+  InputAdornment,
+} from '@mui/material';
+import { SmartToy, AutoAwesome, Psychology, Code, Science, TrendingUp, Search } from '@mui/icons-material';
 import { useGetModelsQuery } from '@/store/api';
 import { formatNumber } from '@/utils';
 import { motion } from 'framer-motion';
@@ -42,9 +54,22 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeModel, onSelectModel }) 
       }}
     >
       <Box sx={{ p: 2, borderBottom: `1px solid ${theme.palette.divider}` }}>
-        <Typography variant="h6" fontWeight={700} color="primary">
+        <Typography variant="caption" fontWeight={700} color="text.secondary" sx={{ letterSpacing: 0.6 }}>
           Models
         </Typography>
+        <TextField
+          size="small"
+          fullWidth
+          placeholder={`Search ${models?.length || 0} models...`}
+          sx={{ mt: 1.2 }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <Search sx={{ fontSize: 16 }} />
+              </InputAdornment>
+            ),
+          }}
+        />
       </Box>
 
       <Box sx={{ flex: 1, overflow: 'auto', py: 1 }}>
@@ -57,7 +82,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeModel, onSelectModel }) 
         ) : (
           <>
             <List dense>
-              {models?.slice(0, 5).map((model) => (
+              {models?.map((model) => (
                 <motion.div
                   key={model.id}
                   initial={{ opacity: 0, x: -20 }}
@@ -71,6 +96,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeModel, onSelectModel }) 
                       sx={{
                         borderRadius: 2,
                         mx: 1,
+                        py: 0.6,
                         '&.Mui-selected': {
                           backgroundColor: theme.palette.primary.main + '20',
                           '&:hover': {
@@ -84,9 +110,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeModel, onSelectModel }) 
                       </ListItemIcon>
                       <ListItemText
                         primary={model.name}
-                        secondary={`${model.rating} ★ • ${formatNumber(model.stats.users)} users`}
-                        primaryTypographyProps={{ variant: 'body2', fontWeight: 600 }}
-                        secondaryTypographyProps={{ variant: 'caption' }}
+                        secondary={`• ${model.lab}  •  ${formatNumber(model.stats.users)} users`}
+                        primaryTypographyProps={{ variant: 'body2', fontWeight: 600, sx: { fontSize: 12 } }}
+                        secondaryTypographyProps={{ variant: 'caption', sx: { fontSize: 10 } }}
                       />
                     </ListItemButton>
                   </ListItem>
