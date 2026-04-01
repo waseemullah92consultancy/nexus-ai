@@ -1,0 +1,80 @@
+[
+  {
+    "id": "research-001",
+    "title": "Scaling Laws for Neural Language Models",
+    "authors": ["OpenAI Research"],
+    "lab": "OpenAI",
+    "category": "Foundation",
+    "abstract": "We study the empirical scaling laws for language model performance on cross-entropy loss. The loss scales as a power law with model size, dataset size, and training compute.",
+    "url": "https://arxiv.org/abs/2001.08361",
+    "publishedAt": "2024-01-15",
+    "tags": ["scaling", "language-models", "theory"],
+    "citations": 8500,
+    "trending": true
+  },
+  {
+    "id": "research-002",
+    "title": "Constitutional AI: Harmlessness from AI Feedback",
+    "authors": ["Anthropic Research"],
+    "lab": "Anthropic",
+    "category": "Safety",
+    "abstract": "We propose Constitutional AI, a method for training AI systems to be harmless by using a set of principles to guide the AI's behavior, combined with AI feedback for fine-tuning.",
+    "url": "https://arxiv.org/abs/2212.08073",
+    "publishedAt": "2024-02-20",
+    "tags": ["safety", "alignment", "constitutional-ai"],
+    "citations": 4200,
+    "trending": true
+  },
+  {
+    "id": "research-003",
+    "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+    "authors": ["Google Research"],
+    "lab": "Google DeepMind",
+    "category": "Technique",
+    "abstract": "We explore chain-of-thought prompting, a technique that significantly improves the reasoning capabilities of large language models by generating intermediate reasoning steps.",
+    "url": "https://arxiv.org/abs/2201.11903",
+    "publishedAt": "2024-01-28",
+    "tags": ["reasoning", "prompting", "chain-of-thought"],
+    "citations": 12500,
+    "trending": true
+  },
+  {
+    "id": "research-004",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "authors": ["Facebook AI Research"],
+    "lab": "Meta AI",
+    "category": "Architecture",
+    "abstract": "We present Retrieval-Augmented Generation (RAG), a hybrid approach that combines pre-trained parametric and non-parametric memory for language generation.",
+    "url": "https://arxiv.org/abs/2005.11401",
+    "publishedAt": "2024-03-10",
+    "tags": ["rag", "retrieval", "generation"],
+    "citations": 9800,
+    "trending": true
+  },
+  {
+    "id": "research-005",
+    "title": "Efficient Streaming Language Models with Attention Sinks",
+    "authors": ["MIT CSAIL", "Princeton"],
+    "lab": "Academic",
+    "category": "Efficiency",
+    "abstract": "We introduce attention sinks, a mechanism that enables streaming language models to handle arbitrarily long sequences without sacrificing performance.",
+    "url": "https://arxiv.org/abs/2309.17453",
+    "publishedAt": "2024-04-05",
+    "tags": ["streaming", "efficiency", "attention"],
+    "citations": 2100,
+    "trending": false
+  },
+  {
+    "id": "research-006",
+    "title": "Multimodal Foundation Models: From CLIP to GPT-4V",
+    "authors": ["Microsoft Research"],
+    "lab": "Academic",
+    "category": "Multimodal",
+    "abstract": "A comprehensive survey of multimodal foundation models, covering architectures, training objectives, and applications from image-text pre-training to vision-language reasoning.",
+    "url": "https://arxiv.org/abs/2309.10079",
+    "publishedAt": "2024-05-15",
+    "tags": ["multimodal", "vision", "survey"],
+    "citations": 3600,
+    "trending": true
+  }
+]

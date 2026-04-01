@@ -1,0 +1,92 @@
+[
+  {
+    "id": "lab-001",
+    "name": "OpenAI",
+    "slug": "openai",
+    "logo": "/labs/openai.svg",
+    "description": "Leading AI research lab creating GPT series models",
+    "founded": 2015,
+    "website": "https://openai.com",
+    "modelsCount": 3
+  },
+  {
+    "id": "lab-002",
+    "name": "Anthropic",
+    "slug": "anthropic",
+    "logo": "/labs/anthropic.svg",
+    "description": "AI safety company focused on building reliable AI systems",
+    "founded": 2021,
+    "website": "https://anthropic.com",
+    "modelsCount": 3
+  },
+  {
+    "id": "lab-003",
+    "name": "Google DeepMind",
+    "slug": "google-deepmind",
+    "logo": "/labs/deepmind.svg",
+    "description": "Pioneering AI research with Gemini and PaLM models",
+    "founded": 2010,
+    "website": "https://deepmind.google",
+    "modelsCount": 2
+  },
+  {
+    "id": "lab-004",
+    "name": "Meta AI",
+    "slug": "meta",
+    "logo": "/labs/meta.svg",
+    "description": "Open source AI with Llama series models",
+    "founded": 2013,
+    "website": "https://ai.meta.com",
+    "modelsCount": 2
+  },
+  {
+    "id": "lab-005",
+    "name": "Mistral AI",
+    "slug": "mistral",
+    "logo": "/labs/mistral.svg",
+    "description": "European AI lab creating efficient open models",
+    "founded": 2023,
+    "website": "https://mistral.ai",
+    "modelsCount": 1
+  },
+  {
+    "id": "lab-006",
+    "name": "Cohere",
+    "slug": "cohere",
+    "logo": "/labs/cohere.svg",
+    "description": "Enterprise-focused AI with embedding and generation models",
+    "founded": 2019,
+    "website": "https://cohere.com",
+    "modelsCount": 1
+  },
+  {
+    "id": "lab-007",
+    "name": "Stability AI",
+    "slug": "stability",
+    "logo": "/labs/stability.svg",
+    "description": "Generative AI for images and creative content",
+    "founded": 2020,
+    "website": "https://stability.ai",
+    "modelsCount": 1
+  },
+  {
+    "id": "lab-008",
+    "name": "xAI",
+    "slug": "xai",
+    "logo": "/labs/xai.svg",
+    "description": "Building Grok and next-generation AI systems",
+    "founded": 2023,
+    "website": "https://x.ai",
+    "modelsCount": 1
+  },
+  {
+    "id": "lab-009",
+    "name": "01.AI",
+    "slug": "01ai",
+    "logo": "/labs/01ai.svg",
+    "description": "Chinese AI company developing Yi series models",
+    "founded": 2023,
+    "website": "https://01.ai",
+    "modelsCount": 1
+  }
+]

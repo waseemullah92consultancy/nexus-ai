@@ -1,0 +1,11 @@
+[
+  {
+    "id": "96d4c158-4de4-4278-9bb8-69e6f1b26b13",
+    "email": "demo@nexusai.com",
+    "password": "$2b$12$6JLFOLI1GqbPVBYIBXoY0OCNvNwFA6wsbQ9UHc2.TWRvuGVRIMEji",
+    "name": "Demo User",
+    "createdAt": "2026-04-01T09:50:29.992Z",
+    "updatedAt": "2026-04-01T09:52:54.060Z",
+    "refreshToken": "$2b$12$KqIS34Yoac9uaQEHwIVLc.fASaUECpvbVCyFpDS7Iw0u/wGGmMWeu"
+  }
+]

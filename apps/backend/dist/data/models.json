@@ -1,0 +1,353 @@
+[
+  {
+    "id": "model-001",
+    "name": "GPT-4 Turbo",
+    "slug": "gpt-4-turbo",
+    "lab": "OpenAI",
+    "labId": "lab-001",
+    "category": "Language",
+    "description": "Most capable GPT-4 model with vision capabilities, optimized for speed and cost efficiency.",
+    "contextWindow": 128000,
+    "maxOutput": 4096,
+    "pricing": {
+      "input": 0.01,
+      "output": 0.03,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.9,
+    "reviews": 12500,
+    "features": ["vision", "function-calling", "json-mode", "streaming"],
+    "tags": ["conversational", "reasoning", "code", "analysis"],
+    "launchedAt": "2024-01-15",
+    "updatedAt": "2024-03-01",
+    "stats": {
+      "requests": 15000000,
+      "users": 250000
+    }
+  },
+  {
+    "id": "model-002",
+    "name": "GPT-4o",
+    "slug": "gpt-4o",
+    "lab": "OpenAI",
+    "labId": "lab-001",
+    "category": "Language",
+    "description": "Omni model with native multimodal capabilities, faster and more efficient than GPT-4.",
+    "contextWindow": 128000,
+    "maxOutput": 4096,
+    "pricing": {
+      "input": 0.005,
+      "output": 0.015,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.8,
+    "reviews": 8900,
+    "features": ["vision", "audio", "function-calling", "json-mode", "streaming"],
+    "tags": ["conversational", "multimodal", "real-time"],
+    "launchedAt": "2024-05-13",
+    "updatedAt": "2024-06-01",
+    "stats": {
+      "requests": 25000000,
+      "users": 500000
+    }
+  },
+  {
+    "id": "model-003",
+    "name": "GPT-3.5 Turbo",
+    "slug": "gpt-3.5-turbo",
+    "lab": "OpenAI",
+    "labId": "lab-001",
+    "category": "Language",
+    "description": "Fast and cost-effective model for everyday tasks with excellent quality.",
+    "contextWindow": 16385,
+    "maxOutput": 4096,
+    "pricing": {
+      "input": 0.0005,
+      "output": 0.0015,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.6,
+    "reviews": 45000,
+    "features": ["function-calling", "json-mode", "streaming"],
+    "tags": ["conversational", "fast", "cost-effective"],
+    "launchedAt": "2023-03-01",
+    "updatedAt": "2024-01-01",
+    "stats": {
+      "requests": 100000000,
+      "users": 1000000
+    }
+  },
+  {
+    "id": "model-004",
+    "name": "Claude 3.5 Sonnet",
+    "slug": "claude-3-5-sonnet",
+    "lab": "Anthropic",
+    "labId": "lab-002",
+    "category": "Language",
+    "description": "Most intelligent model with exceptional reasoning, coding, and creative capabilities.",
+    "contextWindow": 200000,
+    "maxOutput": 8192,
+    "pricing": {
+      "input": 0.003,
+      "output": 0.015,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.9,
+    "reviews": 15600,
+    "features": ["vision", "tool-use", "code-execution", "streaming"],
+    "tags": ["reasoning", "coding", "analysis", "creative"],
+    "launchedAt": "2024-06-20",
+    "updatedAt": "2024-08-01",
+    "stats": {
+      "requests": 30000000,
+      "users": 400000
+    }
+  },
+  {
+    "id": "model-005",
+    "name": "Claude 3 Opus",
+    "slug": "claude-3-opus",
+    "lab": "Anthropic",
+    "labId": "lab-002",
+    "category": "Language",
+    "description": "Powerful model for complex tasks requiring deep analysis and nuanced understanding.",
+    "contextWindow": 200000,
+    "maxOutput": 4096,
+    "pricing": {
+      "input": 0.015,
+      "output": 0.075,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.8,
+    "reviews": 8200,
+    "features": ["vision", "tool-use", "streaming"],
+    "tags": ["reasoning", "analysis", "research"],
+    "launchedAt": "2024-03-04",
+    "updatedAt": "2024-05-01",
+    "stats": {
+      "requests": 8000000,
+      "users": 150000
+    }
+  },
+  {
+    "id": "model-006",
+    "name": "Claude 3 Haiku",
+    "slug": "claude-3-haiku",
+    "lab": "Anthropic",
+    "labId": "lab-002",
+    "category": "Language",
+    "description": "Fastest and most compact model for near-instant responsiveness.",
+    "contextWindow": 200000,
+    "maxOutput": 4096,
+    "pricing": {
+      "input": 0.00025,
+      "output": 0.00125,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.7,
+    "reviews": 12000,
+    "features": ["vision", "tool-use", "streaming"],
+    "tags": ["fast", "cost-effective", "conversational"],
+    "launchedAt": "2024-03-13",
+    "updatedAt": "2024-04-01",
+    "stats": {
+      "requests": 45000000,
+      "users": 600000
+    }
+  },
+  {
+    "id": "model-007",
+    "name": "Gemini 1.5 Pro",
+    "slug": "gemini-1-5-pro",
+    "lab": "Google DeepMind",
+    "labId": "lab-003",
+    "category": "Language",
+    "description": "Multimodal model with up to 2M token context window for complex reasoning.",
+    "contextWindow": 2000000,
+    "maxOutput": 8192,
+    "pricing": {
+      "input": 0.0035,
+      "output": 0.0105,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.7,
+    "reviews": 9800,
+    "features": ["vision", "audio", "video", "code-execution", "streaming"],
+    "tags": ["multimodal", "long-context", "reasoning"],
+    "launchedAt": "2024-02-15",
+    "updatedAt": "2024-05-01",
+    "stats": {
+      "requests": 20000000,
+      "users": 350000
+    }
+  },
+  {
+    "id": "model-008",
+    "name": "Gemini 1.5 Flash",
+    "slug": "gemini-1-5-flash",
+    "lab": "Google DeepMind",
+    "labId": "lab-003",
+    "category": "Language",
+    "description": "Fast multimodal model optimized for speed while maintaining quality.",
+    "contextWindow": 1000000,
+    "maxOutput": 8192,
+    "pricing": {
+      "input": 0.00035,
+      "output": 0.00105,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.6,
+    "reviews": 7600,
+    "features": ["vision", "audio", "video", "streaming"],
+    "tags": ["fast", "multimodal", "cost-effective"],
+    "launchedAt": "2024-05-14",
+    "updatedAt": "2024-06-01",
+    "stats": {
+      "requests": 35000000,
+      "users": 500000
+    }
+  },
+  {
+    "id": "model-009",
+    "name": "Llama 3.1 405B",
+    "slug": "llama-3-1-405b",
+    "lab": "Meta AI",
+    "labId": "lab-004",
+    "category": "Language",
+    "description": "Largest open-source model with competitive performance against closed models.",
+    "contextWindow": 128000,
+    "maxOutput": 4096,
+    "pricing": {
+      "input": 0.0028,
+      "output": 0.0028,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.7,
+    "reviews": 5200,
+    "features": ["streaming", "tool-use"],
+    "tags": ["open-source", "reasoning", "coding"],
+    "launchedAt": "2024-07-23",
+    "updatedAt": "2024-08-01",
+    "stats": {
+      "requests": 8000000,
+      "users": 120000
+    }
+  },
+  {
+    "id": "model-010",
+    "name": "Llama 3.2 90B Vision",
+    "slug": "llama-3-2-90b-vision",
+    "lab": "Meta AI",
+    "labId": "lab-004",
+    "category": "Language",
+    "description": "Multimodal open-source model with vision capabilities.",
+    "contextWindow": 128000,
+    "maxOutput": 4096,
+    "pricing": {
+      "input": 0.0009,
+      "output": 0.0009,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.5,
+    "reviews": 3400,
+    "features": ["vision", "streaming"],
+    "tags": ["open-source", "multimodal", "vision"],
+    "launchedAt": "2024-09-25",
+    "updatedAt": "2024-10-01",
+    "stats": {
+      "requests": 5000000,
+      "users": 80000
+    }
+  },
+  {
+    "id": "model-011",
+    "name": "Mistral Large 2",
+    "slug": "mistral-large-2",
+    "lab": "Mistral AI",
+    "labId": "lab-005",
+    "category": "Language",
+    "description": "Flagship model with excellent multilingual and coding capabilities.",
+    "contextWindow": 128000,
+    "maxOutput": 4096,
+    "pricing": {
+      "input": 0.002,
+      "output": 0.006,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.6,
+    "reviews": 2800,
+    "features": ["function-calling", "streaming"],
+    "tags": ["multilingual", "coding", "reasoning"],
+    "launchedAt": "2024-07-24",
+    "updatedAt": "2024-08-01",
+    "stats": {
+      "requests": 6000000,
+      "users": 90000
+    }
+  },
+  {
+    "id": "model-012",
+    "name": "Cohere Command R+",
+    "slug": "command-r-plus",
+    "lab": "Cohere",
+    "labId": "lab-006",
+    "category": "Language",
+    "description": "Enterprise-grade RAG and tool-use model optimized for business applications.",
+    "contextWindow": 128000,
+    "maxOutput": 4096,
+    "pricing": {
+      "input": 0.003,
+      "output": 0.015,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.5,
+    "reviews": 1900,
+    "features": ["rag", "tool-use", "streaming"],
+    "tags": ["enterprise", "rag", "tool-use"],
+    "launchedAt": "2024-04-01",
+    "updatedAt": "2024-06-01",
+    "stats": {
+      "requests": 4000000,
+      "users": 45000
+    }
+  },
+  {
+    "id": "model-013",
+    "name": "Grok-2",
+    "slug": "grok-2",
+    "lab": "xAI",
+    "labId": "lab-008",
+    "category": "Language",
+    "description": "Advanced reasoning model with real-time knowledge access and wit.",
+    "contextWindow": 131072,
+    "maxOutput": 4096,
+    "pricing": {
+      "input": 0.01,
+      "output": 0.03,
+      "currency": "USD",
+      "unit": "per 1K tokens"
+    },
+    "rating": 4.6,
+    "reviews": 3100,
+    "features": ["real-time", "streaming", "function-calling"],
+    "tags": ["real-time", "reasoning", "conversational"],
+    "launchedAt": "2024-08-13",
+    "updatedAt": "2024-09-01",
+    "stats": {
+      "requests": 3000000,
+      "users": 50000
+    }
+  }
+]
